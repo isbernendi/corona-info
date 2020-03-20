@@ -1,7 +1,7 @@
 # corona-info
 
-https://dedesundara.github.io/corona-info/corona-info.html
+https://isbernendi.github.io/corona-info/
 
-Jangan lupa di walled garden url api nya coronavirus-19-api.herokuapp.com
+Jangan lupa di walled garden url api nya  --> coronavirus-19-api.herokuapp.com
 
-![ss3](https://user-images.githubusercontent.com/44356166/77145545-74d89100-6abb-11ea-90e3-010ede74295e.jpeg)
+https://github.com/isbernendi/corona-info/blob/master/Screenshot_3.png?raw=true
