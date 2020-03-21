@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
+
+<!--- script dibawah letakan diatas body --->
+	
+<!--- Awal --->	
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-
 	.corona-alert {
 	  padding: 20px;
 	  background-color: #031b4e;
@@ -62,13 +62,10 @@
 	.header .corona-blink .corona-blink01{width:10px;height:10px;}
 	}
 	@-webkit-keyframes blinking{from{opacity:1;}to{opacity:0;}}
-	@keyframes blinking{from{opacity:1;}to{opacity:0;}}
-	
+	@keyframes blinking{from{opacity:1;}to{opacity:0;}}	
 </style>
-
 </head>
 <body>
-
 <script>
 var date = new Date();
 var tahun = date.getFullYear();
@@ -106,9 +103,16 @@ document.getElementById("corona-meninggaltoday").innerHTML = 'Hari ini : ' + out
 document.getElementById("corona-sembuh").innerHTML = 'Sembuh : ' + out.recovered;
 })
 .catch(err => { throw err });
-
 </script>
+<!--- Akhir --->	
+	
+	
+	
 
+	
+<!-- scrip berikut sesuaikan tata letak di loginpage anda -->
+	
+<!--- Awal --->	
 <div class="corona-alert">
 	<span class="corona-closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
 	<strong id="corona-info">Informasi Covid-19 di Indonesia <script>document.write(infoTanggal);</script> <span class="corona-blink"><i class="corona-blink01 corona-blink02"></i></span></strong>&nbsp;
@@ -119,6 +123,5 @@ document.getElementById("corona-sembuh").innerHTML = 'Sembuh : ' + out.recovered
 	<label id="corona-meninggaltoday" class="corona-label corona-bg-danger"></label>
 	<label id="corona-sembuh" class="corona-label corona-bg-success"></label>
 </div>
+<!--- Akhir --->	
 
-</body>
-</html>
