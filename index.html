@@ -1,14 +1,20 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
+<title>expired</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+<link rel="stylesheet" href="mks.css">
+<link rel="shortcut icon" type="image/x-icon" href="icon.png" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
 	.corona-alert {
 	  padding: 20px;
-	  background-color: #3A424B;
-	  border: 4px  solid #2A2E32;
-	  border-radius: 8px;
+	  background-color: #031b4e;
 	  color: white;
 	}
 	
@@ -68,6 +74,7 @@
 	
 </style>
 
+
 </head>
 <body>
 
@@ -110,7 +117,13 @@ document.getElementById("corona-sembuh").innerHTML = 'Sembuh : ' + out.recovered
 .catch(err => { throw err });
 
 </script>
-
+</head>
+<body>
+<div class="container">
+<div class="col-4 mr-a box-semua" id="main" style="float:none;">
+<div class="row">
+<div class="col-12">	
+<div class="logo bmh-80 text-center">		
 <div class="corona-alert">
 	<span class="corona-closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
 	<strong id="corona-info">Informasi Covid-19 di Indonesia <script>document.write(infoTanggal);</script> <span class="corona-blink"><i class="corona-blink01 corona-blink02"></i></span></strong>&nbsp;
@@ -121,7 +134,35 @@ document.getElementById("corona-sembuh").innerHTML = 'Sembuh : ' + out.recovered
 	<label id="corona-meninggaltoday" class="corona-label corona-bg-danger"></label>
 	<label id="corona-sembuh" class="corona-label corona-bg-success"></label>
 </div>
+ <div class="col-12">
+<p style="margin-top:5px">
+<a href="https://isbernendi.github.io/"><button type="button" class="small-button1 ">Home</button></a>
+<a href="https://raw.githubusercontent.com/isbernendi/corona-info/master/script.html"><button type="button" class="small-button1"> Download </button></a>
+<p style="font-size:20px;text-align:center;color:#111" class="blink">
+<span style=" color: #111111; font-weight: bold; text-align:center">
+&nbsp;&nbsp;&nbsp;      &nbsp;&nbsp;</span></button>
 
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  
+</div>
+</div>
+</div>
+</div>
+</div>
+ <style type="text/css"> 
+.blink { -webkit-animation: blink .99s linear infinite; 
+-moz-animation: blink .99s linear infinite; 
+-ms-animation: blink .99s linear infinite; 
+-o-animation: blink .99s linear infinite; 
+animation: blink .99s linear infinite; } @-webkit-keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } @-moz-keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } @-ms-keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } @-o-keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } @keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } 
+</style>
 </body>
-	 <a href="https://raw.githubusercontent.com/isbernendi/corona-info/master/script.html"><font color="#111"><b>Download</b></a>
 </html>
+
