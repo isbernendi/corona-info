@@ -1,21 +1,191 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content='Huracan' name='Author'/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 <title>Informasi Covid-19</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="pragma" content="no-cache" />
-<meta http-equiv="expires" content="-1" />
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
-<link rel="stylesheet" href="mks.css">
-<link rel="shortcut icon" type="image/x-icon" href="icon.png" />
+<link rel="stylesheet" href="isbernendi.css">
+<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="genericons/genericons.css" type="text/css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script>
+var date = new Date();
+var tahun = date.getFullYear();
+var bulan = date.getMonth();
+var tanggal = date.getDate();
+switch(bulan) {
+ case 0: bulan = "Januari"; break;
+ case 1: bulan = "Februari"; break;
+ case 2: bulan = "Maret"; break;
+ case 3: bulan = "April"; break;
+ case 4: bulan = "Mei"; break;
+ case 5: bulan = "Juni"; break;
+ case 6: bulan = "Juli"; break;
+ case 7: bulan = "Agustus"; break;
+ case 8: bulan = "September"; break;
+ case 9: bulan = "Oktober"; break;
+ case 10: bulan = "November"; break;
+ case 11: bulan = "Desember"; break;
+}
+var infoTanggal = tanggal + "/" + bulan + "/" + tahun;
+
+// Daftar API Lainnya
+// https://covid19.mathdro.id/api/countries/ID
+// https://api.kawalcorona.com/indonesia/
+
+let url = 'https://coronavirus-19-api.herokuapp.com/countries/Indonesia';
+fetch(url)
+.then(res => res.json())
+.then((out) => {
+document.getElementById("corona-positif").innerHTML = 'Positif : ' + out.cases;
+document.getElementById("corona-positiftoday").innerHTML = 'Hari ini : ' + out.todayCases;
+document.getElementById("corona-positifaktif").innerHTML = 'Aktif : ' + out.active;
+document.getElementById("corona-meninggal").innerHTML = 'Meninggal : ' + out.deaths;
+document.getElementById("corona-meninggaltoday").innerHTML = 'Hari ini : ' + out.todayDeaths;
+document.getElementById("corona-sembuh").innerHTML = 'Sembuh : ' + out.recovered;
+})
+.catch(err => { throw err });
+
+</script>
+<p style=" margin-top:-20px;margin-bottom:5px">	
+<p style=" margin-top:20px;margin-bottom:5px">	
+<body class="light-blue lighten-1">
+<form name="sendin" action="$(link-login-only)" method="post">
+<input type="hidden" name="username" />
+<input type="hidden" name="password" />
+<input type="hidden" name="dst" value="$(link-orig)" />
+<input type="hidden" name="popup" value="true" />
+</form>
+<script type="text/javascript" src="md5.js"></script>					
+<div class="container mks11">
+<div class="row wrapper animated flipInY">
+<div class="corona-alert">
+	<span class="corona-closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+	<strong id="corona-info">
+	<p style=" text-align:center;margin-top:0px;margin-bottom:0px">	
+	Informasi Covid-19 di Indonesia <script>document.write(infoTanggal);</script><br><span class="corona-blink"><i class="corona-blink01 corona-blink02"></i></span></strong>&nbsp;
+	<label id="corona-positif" class="corona-label corona-bg-primary"></label>
+	<label id="corona-positiftoday" class="corona-label corona-bg-primary"></label>
+	<label id="corona-positifaktif" class="corona-label corona-bg-primary"></label>
+	<label id="corona-meninggal" class="corona-label corona-bg-danger"></label>
+	<label id="corona-meninggaltoday" class="corona-label corona-bg-danger"></label>
+	<label id="corona-sembuh" class="corona-label corona-bg-success"></label>
+</div>
+<div class="col-sm-5">
+<div class="loin">
+<p style="color:#FFF;font-size:20px; text-align:center;margin-top:5px;margin-bottom:10px;text-shadow: 2px 2px 4px #111;"><a href="login.html"><font color="#FFF"><b>MINUM KAWO SQUARE<b/></font></a><br><p style="color:#FFF;font-size:11px; text-align:center;margin-top:-10px;margin-bottom:0px">Layanan data internet terbaik 
+<p style=" text-align:center;margin-top:5px;margin-bottom:5px">
+<p style=" text-align:center;margin-top:5px;margin-bottom:5px">
+<div class="colored">
+<div class="blue"></div>
+<div class="aqua"></div>
+<div class="green"></div>
+<div class="yellow"></div>
+<div class="red"></div>
+</div>
+<p style=" text-align:center;margin-top:5px;margin-bottom:5px">	
+<p style="color:#FFF;font-size:11px; text-align:center;margin-top:5px;margin-bottom:15px">
+<div style='display:none;'>
+<p style="font-size:15px;text-align:center;margin-top:5px;margin-bottom:5px;color:#111" class="blink">
+<span style="background: #fff; color: #555; font-weight: bold; text-align:center">&nbsp;MAAF...INTERNET DALAM PERBAIKAN&nbsp;</span>
+</div>
+<form name="login" action="$(link-login-only)" method="post"
+$(if chap-id) onSubmit="return doLogin()" $(endif)>
+<input type="hidden" name="dst" value="$(link-orig)" />
+<input type="hidden" name="popup" value="true" />
+<div class="form-group">
+<b><input style="text-align:center"oninput="this.value = this.value.toUpperCase()" type="text" class="form-control" name="username" onblur="password.value=username.value" placeholder="KODE VOUCHER" required="required" autocomplete="on"></b>
+<input type="hidden" class="form-control" placeholder="Password" name="password">
+</form>
+<ul class="list-inline text-center">
+<li class="btn-inline">
+<a type="button" class="btn btn-free btn-block "onclick="window.location='https://laksa19.github.io/myqr';"><b>QR CODE</b></a>
+<div>
+<div>
+<div><div>
+</li>
+<li class="btn-inline"><button type="submit" class="btn btn-log btn-block">LOGIN</button></li>
+<p style="font-size:13px;color:#FFF;text-align:center;margin-top:10px;margin-bottom:10px">	
+<font color="#FFF">
+<b>Uji coba gratis klik,</b> <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"><font color="#FFF"><b>FREE</b></a></div><br />
+</ul>
+<p style="font-size:13px;text-align:center;margin-top:-20px;margin-bottom:10px;color:#111" class="blink1">
+<a href="login.html"><font color="#FFF"><b>CS : 0822 1160 1165<b/></font></a>
+
+
+
+
+<p style="font-size:16px;color:#FFF;text-align:center;margin-top:-10px;margin-bottom:10px">	
+<style type="text/css"> 
+.blink { -webkit-animation: blink .99s linear infinite; 
+-moz-animation: blink .99s linear infinite; 
+-ms-animation: blink .99s linear infinite; 
+-o-animation: blink .99s linear infinite; 
+animation: blink .99s linear infinite; } @-webkit-keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } @-moz-keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } @-ms-keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } @-o-keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } @keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } 
+</style>
+</head>
+<body>
+<p style="font-size:16px;color:#FFF;text-align:center;margin-top:-5px;margin-bottom:-0px">
+</div></div>						
+<div class="col-sm-7">
+<div class="loin">
+<p style="font-size:16px;color:#FFF;text-align:center;margin-top:15px;margin-bottom:15px">
+<a href="login.html"><font color="#FFF"><b>* PAKET HOTSPOT *<b/></font></a>
+<p style="font-size:16px;color:#FFF;text-align:center;margin-top:-10px;margin-bottom:10px">
+<table class="table table-striped" style="font-size: 100%;">
+<tr>
+<th><font size="2px"><font color="#FFF">Voucher</font></th>
+<th><font size="2px"><font color="#FFF">Speed</font></th>
+<th><font size="2px"><font color="#FFF">Aktif</font></th>
+
+</tr>
+<tr>
+<td><font size="2px"><font color="#FFF">Rp. 3.000</font></td>
+<td><font size="2px"><font color="#FFF">1 Mbps</font></td>
+<td><font size="2px"><font color="#FFF">12 JAM</font></td>
+</tr>
+<tr>
+<td><font size="2px"><font color="#FFF">Rp. 20.000</font></td>
+<td><font size="2px"><font color="#FFF">1 Mbps</font></td>
+<td><font size="2px"><font color="#FFF">7 HARI</font></td>
+</tr>
+<tr>
+<td><font size="2px"><font color="#FFF">Rp. 70.000</font></td>
+<td><font size="2px"><font color="#FFF">1 Mbps</font></td>
+<td><font size="2px"><font color="#FFF">1 BULAN</font></td>
+</table>
+<table class="table table-striped" style="font-size: 100%;">
+<td><p style=" font-size:15px;text-align:center;margin-top:-5px;margin-bottom:0px">
+<font size="2px"><font color="#FFF">PAKET DOWNLOAD 12JAM 3Mbps Rp.5000</font></td>
+</table>
+
+
+<div class="col-sm-12">
+</div>	
+</div>
+</div>
+</div>
+<p style=" text-align:center;margin-top:10px;margin-bottom:5px">
+<div class="copy text-center"><font color="#FFF">&copy; Copyright 2020 | <a  href="http://fb.com/ber.nendi"><font color="#FFF">isbernendi</a> - All rights reserved</font></div> 
+</div>
+				
+</body>
 <style>
 
 	.corona-alert {
-	  padding: 20px;
-	  background-color: #031b4e;
+	  
+	  padding: 10px;
+	  
 	  color: white;
+	  font-size: 12px;
 	}
 	
 	.corona-closebtn {
@@ -58,7 +228,7 @@
 	margin-bottom:.5rem;
 	}
 	
-	.corona-blink{display:inline-flex;width:20px;justify-content:center;}
+	.corona-blink{display:inline-flex;width:30px;justify-content:center;}
 	.corona-blink01{width:14px;height:14px;background-color:red;border-radius:50%;}
 	.corona-blink02{-webkit-animation:blinking 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;animation:blinking 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;}
 	::-webkit-input-placeholder{color:#888;}
@@ -73,101 +243,5 @@
 	@keyframes blinking{from{opacity:1;}to{opacity:0;}}
 	
 </style>
-
-
-</head>
-<body>
-
-<script>
-var date = new Date();
-var tahun = date.getFullYear();
-var bulan = date.getMonth();
-var tanggal = date.getDate();
-switch(bulan) {
- case 0: bulan = "Januari"; break;
- case 1: bulan = "Februari"; break;
- case 2: bulan = "Maret"; break;
- case 3: bulan = "April"; break;
- case 4: bulan = "Mei"; break;
- case 5: bulan = "Juni"; break;
- case 6: bulan = "Juli"; break;
- case 7: bulan = "Agustus"; break;
- case 8: bulan = "September"; break;
- case 9: bulan = "Oktober"; break;
- case 10: bulan = "November"; break;
- case 11: bulan = "Desember"; break;
-}
-var infoTanggal = tanggal + "/" + bulan + "/" + tahun;
-
-// Daftar API Lainnya
-// https://covid19.mathdro.id/api/countries/ID
-// https://api.kawalcorona.com/indonesia/
-
-let url = 'https://coronavirus-19-api.herokuapp.com/countries/Indonesia';
-fetch(url)
-.then(res => res.json())
-.then((out) => {
-document.getElementById("corona-positif").innerHTML = 'Positif : ' + out.cases;
-document.getElementById("corona-positiftoday").innerHTML = 'Hari ini : ' + out.todayCases;
-document.getElementById("corona-positifaktif").innerHTML = 'Aktif : ' + out.active;
-document.getElementById("corona-meninggal").innerHTML = 'Meninggal : ' + out.deaths;
-document.getElementById("corona-meninggaltoday").innerHTML = 'Hari ini : ' + out.todayDeaths;
-document.getElementById("corona-sembuh").innerHTML = 'Sembuh : ' + out.recovered;
-})
-.catch(err => { throw err });
-
-</script>
-</head>
-<body>
-<div class="container">
-<div class="col-5 mr-a box-semua" id="main" style="float:none;">
-<div class="row">
-<div class="col-12">	
-<div class="logo bmh-80 text-center">		
-<div class="corona-alert">
-	<span class="corona-closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-	<strong id="corona-info">Informasi Covid-19 di Indonesia <script>document.write(infoTanggal); </script><br><br> <span class="corona-blink"><i class="corona-blink01 corona-blink02"></i></span></strong>&nbsp;
-	<label id="corona-positif" class="corona-label corona-bg-primary"></label>
-	<label id="corona-positiftoday" class="corona-label corona-bg-primary"></label>
-	<label id="corona-positifaktif" class="corona-label corona-bg-primary"></label>
-	<label id="corona-meninggal" class="corona-label corona-bg-danger"></label>
-	<label id="corona-meninggaltoday" class="corona-label corona-bg-danger"></label>
-	<label id="corona-sembuh" class="corona-label corona-bg-success"></label>
-</div>
- <div class="col-12">
-<p style="margin-top:5px">
-<a href="https://isbernendi.github.io/"><button type="button" class="small-button1 ">Home</button></a>
-<a href="https://raw.githubusercontent.com/isbernendi/corona-info/master/script.html"><button type="button" class="small-button1"> Download </button></a>
-<span style="font-size:15px;text-align:center; color: #111; font-weight: bold; text-align:center">
-&nbsp;&nbsp;&nbsp;  Download csript sesuaikan tata letak di loginpage masing masing   &nbsp;&nbsp;</span></button>
-
-<div class="logo bmh-80 text-center">		
-<img src="banner.png"  style="width:100%; max-width: 907px; height:auto;"/></a>
-	  <div class="col-12">
-
-
-
-</div>
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-  
-</div>
-</div>
-</div>
-</div>
-</div>
- <style type="text/css"> 
-.blink { -webkit-animation: blink .99s linear infinite; 
--moz-animation: blink .99s linear infinite; 
--ms-animation: blink .99s linear infinite; 
--o-animation: blink .99s linear infinite; 
-animation: blink .99s linear infinite; } @-webkit-keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } @-moz-keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } @-ms-keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } @-o-keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } @keyframes blink { 0% { opacity: 1; } 50% { opacity: 1; } 50.01% { opacity: 0; } 100% { opacity: 0; } } 
-</style>
-</body>
+</table>	
 </html>
-
